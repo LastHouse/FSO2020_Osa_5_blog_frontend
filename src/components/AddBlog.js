@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const AddBlog = ({
-  addBlog,
-  handleTitleChange,
-  handleAuthorChange,
-  handleUrlChange,
-  newTitle,
-  newAuthor,
-  newUrl,
-}) => {
+const AddBlog = ({ createBlog }) => {
+  const initialState = '';
+  const [newTitle, setNewTitle] = useState(initialState);
+  const [newAuthor, setNewAuthor] = useState(initialState);
+  const [newUrl, setNewUrl] = useState(initialState);
+
+  const addBlog = (e) => {
+    e.preventDefault();
+    const newObject = {
+      title: newTitle,
+      author: newAuthor,
+      url: newUrl,
+    };
+    createBlog(newObject);
+    setNewTitle(initialState);
+    setNewAuthor(initialState);
+    setNewUrl(initialState);
+  };
+
+  const handleTitleChange = (e) => {
+    setNewTitle(e.target.value);
+  };
+  const handleAuthorChange = (e) => {
+    setNewAuthor(e.target.value);
+  };
+  const handleUrlChange = (e) => {
+    setNewUrl(e.target.value);
+  };
+
   return (
     <div>
       {' '}
