@@ -1,6 +1,6 @@
 import React from 'react';
 import Togglable from './Togglable';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 const Blog = ({ blog, likeBlog, delBlog, user }) => {
   const blogStyle = {
@@ -64,9 +64,9 @@ const Blog = ({ blog, likeBlog, delBlog, user }) => {
   );
 };
 
-Blog.propTypes = {
+/* Blog.propTypes = {
   likeBlog: PropTypes.func.isRequired,
   delBlog: PropTypes.func.isRequired,
-};
+}; */
 
 export default Blog;

@@ -50,8 +50,6 @@ const App = () => {
     }
   };
 
-  // MUUTA LOGIIKKA
-
   const handleLogout = () => {
     setUser(null);
     setUsername(initialState);
