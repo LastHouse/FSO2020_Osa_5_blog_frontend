@@ -6,6 +6,7 @@ import AddBlog from './components/AddBlog';
 import LoginForm from './components/LoginForm';
 import Notification from './components/Notification';
 import Togglable from './components/Togglable';
+import Footer from './components/Footer';
 
 const App = () => {
   const initialState = '';
@@ -84,7 +85,7 @@ const App = () => {
       .like(id, newObject)
       .then((response) => {
         setBlogs(blogs.map((item) => (item.id !== id ? item : response)));
-        console.log(response);
+        //console.log(response);
         setMessage(`${user.name} ladded a new like`);
         setTimeout(() => {
           setMessage(null);
@@ -178,6 +179,7 @@ const App = () => {
           />
         ))}
       </ul>
+      <Footer />
     </div>
   );
 };
